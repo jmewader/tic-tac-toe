@@ -9,18 +9,12 @@ const StyledBoard = styled.div`
   flex-wrap: wrap;
 `;
 
-export const Board = () => {
+export const Board = ({ squares, handleClick }: { squares: (string | null)[]; handleClick: (index: number) => void }) => {
   return (
     <StyledBoard>
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
+      {squares.map((square, i) => (
+        <Square key={i} value={square} handleClick={() => handleClick(i)} />
+      ))}
     </StyledBoard>
   );
 };

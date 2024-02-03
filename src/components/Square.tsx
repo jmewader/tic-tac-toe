@@ -13,12 +13,12 @@ const StyledSquare = styled.button`
   justify-content: center;
   align-items: center;
 
-  :hover {
-    background-color: #a4fcff92;
+  &:hover {
+    background-color: #43f9ff92;
     transition: 0.3s all ease;
   }
 `;
 
-export const Square = () => {
-  return <StyledSquare>x</StyledSquare>;
+export const Square = ({ value, handleClick }: { value: any; handleClick: () => void }) => {
+  return <StyledSquare onClick={handleClick}>{value}</StyledSquare>;
 };
