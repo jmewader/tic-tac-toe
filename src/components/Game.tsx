@@ -31,11 +31,12 @@ const StyledButton = styled.button`
 
 const StyledTextBlock = styled.p`
   font-size: 26px;
+  text-align: center;
 `;
 
 export const Game = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
-  const [xIsNext, setXIsNext] = useState(false);
+  const [xIsNext, setXIsNext] = useState(true);
   const winner = getAWinner(board);
 
   const handleClick = (index: number) => {
